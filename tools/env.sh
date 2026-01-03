@@ -1,0 +1,1 @@
+DOCKER_IMAGE_NAME="dreame_cam_builder"

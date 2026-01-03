@@ -1,0 +1,21 @@
+# aarch64-toolchain.cmake
+SET(CMAKE_SYSTEM_NAME Linux)
+SET(CMAKE_SYSTEM_PROCESSOR aarch64)
+
+set(CMAKE_SYSROOT /home/ubuntu/dev/aarch64-sysroot)
+set(CMAKE_FIND_ROOT_PATH /home/ubuntu/dev/aarch64-sysroot)
+
+SET(CMAKE_C_COMPILER aarch64-linux-gnu-gcc)
+SET(CMAKE_CXX_COMPILER aarch64-linux-gnu-g++)
+set(CMAKE_C_FLAGS "--sysroot=${CMAKE_SYSROOT}")
+set(CMAKE_CXX_FLAGS "--sysroot=${CMAKE_SYSROOT}")
+message(STATUS "Compiler: ${CMAKE_C_COMPILER}")
+message(STATUS "Sysroot: ${CMAKE_SYSROOT}")
+
+SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+SET(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
+
+# Don't force static linking:
+set(BUILD_SHARED_LIBS ON)
